@@ -64,9 +64,9 @@ void fft(float *inreal, float *inimag, float *outreal, float *outimag, int len) 
 }
 
 void ifft(float *inreal, float *inimag, float *outreal, float *outimag, int len) {
-    fftcore(inimag, inreal, outimag, outreal, len, 1, 1);
+    fftcore(inreal, inimag, outreal, outimag, len, 1, 0);
     for (int i = 0; i < len; i++) {
-        outreal[i] /= len;
-        outimag[i] /= len;
-    }
+         outreal[i] /= len;
+         outimag[i] /= len;
+     }
 }
